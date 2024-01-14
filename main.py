@@ -12,7 +12,7 @@ api = Api(app)
 class PeopleCounter(Resource):
     def get(self):
         # load image
-        image = cv2.imread('wroclaw_glowny.jpeg')
+        image = cv2.imread('people.jpg')
         image = cv2.resize(image, (700, 400))
 
         # detect people in the image
