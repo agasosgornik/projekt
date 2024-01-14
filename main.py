@@ -1,6 +1,7 @@
 import cv2
 from flask import Flask
 from flask_restful import Resource, Api
+import requests
 
 # initialize the HOG descriptor/person detector
 hog = cv2.HOGDescriptor()
@@ -22,6 +23,10 @@ class PeopleCounter(Resource):
 
 
 api.add_resource(PeopleCounter, '/')
+
+
+img2 = requests.get("https://images.pexels.com/photos/1000754/pexels-photo-1000754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+cv2.imread(img2)
 
 if __name__ == '__main__':
     app.run(debug=True)
